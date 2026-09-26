@@ -29,7 +29,7 @@ spring:
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/order-service/**
-            
+
 jwt:
   secret: HuisaRestaurantJwtSecretKey2026DevelopmentOnly123456789
   expiration: 3600000
