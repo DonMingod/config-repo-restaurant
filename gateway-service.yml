@@ -9,28 +9,30 @@ eureka:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
 
-      routes:
-        - id: auth-service
-          uri: lb://AUTH-SERVICE
-          predicates:
-            - Path=/auth-service/**
-          filters:
-            - StripPrefix=1
+          routes:
+            - id: auth-service
+              uri: lb://AUTH-SERVICE
+              predicates:
+                - Path=/auth-service/**
+              filters:
+                - StripPrefix=1
 
-        - id: menu-service
-          uri: lb://MENU-SERVICE
-          predicates:
-            - Path=/menu-service/**
+            - id: menu-service
+              uri: lb://MENU-SERVICE
+              predicates:
+                - Path=/menu-service/**
 
-        - id: order-service
-          uri: lb://ORDER-SERVICE
-          predicates:
-            - Path=/order-service/**
+            - id: order-service
+              uri: lb://ORDER-SERVICE
+              predicates:
+                - Path=/order-service/**
 
 jwt:
   secret: HuisaRestaurantJwtSecretKey2026DevelopmentOnly123456789
