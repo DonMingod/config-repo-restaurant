@@ -20,3 +20,7 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
+
+jwt:
+  secret: HuisaRestaurantJwtSecretKey2026DevelopmentOnly123456789
+  expiration: 3600000
